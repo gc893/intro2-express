@@ -9,4 +9,8 @@ const skills = [
       return skills;
   }
 
-  module.exports = {getAll};
+  function findSkill(identifier) {
+    return skills.find(el => el.skill === identifier);
+}
+
+module.exports = {getAll, findSkill};

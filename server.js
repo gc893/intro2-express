@@ -15,6 +15,7 @@ const app = express();
 
 // Mount middleware (app.use)
 
+app.use(express.static('public'));
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname,'views'))
 
@@ -28,6 +29,13 @@ app.get('/skills', (req, res) => {
     res.render('index', {
         skills: skillsDb.getAll(),
         title: 'Skills'
+    })
+})
+
+app.get('/skills/:id', (req, res) => {
+    res.render('skill', {
+        skills: skillsDb.findSkill(req.params.id),
+        title: 'Details'
     })
 })
 

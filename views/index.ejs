@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
-</head>
-<body>
-    <h1><%= title %></h1>
-    <ul>
-        <% skills.forEach(skill => { %>
-        <li>
-            <%= skill.skill %>
-            -
-            <%= skill.covered %>
+    <%- include("./partials/header.ejs") %>
+    <body>
+        <h1 class='pagetitle'><%= title %></h1>
+        <ul class='content'>
+            <% skills.forEach(skill => { %>
+                <li>
+                    <a href="./skills/<%=skill.skill%>"><%= skill.skill %></a>
+                    -
+                    <%= skill.covered %>
+                </li>
             <% }) %>
-        </li>
-    </ul> 
-</body>
+        </ul> 
+    </body>
 </html>

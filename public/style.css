@@ -1,0 +1,9 @@
+body {
+    margin: 5em;
+}
+
+.pagetitle {
+    margin: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid gainsboro;
+}
